@@ -9,10 +9,35 @@ public class Pathfinder : MonoBehaviour {
 	[SerializeField] Waypoint startBlock;
 	[SerializeField] Waypoint endBlock;
 
+	Vector2Int[] directions =
+		{
+		Vector2Int.up,
+		Vector2Int.right,
+		Vector2Int.down,
+		Vector2Int.left
+		};
+
 	// Use this for initialization
 	void Start() {
 		LoadBlocks();
 		ColorStartAndEnd();
+		ExploreNeighbourgs();
+	}
+
+	private void ExploreNeighbourgs()
+	{
+		foreach (Vector2Int direction in directions)
+		{
+			Vector2Int exploredBlock = direction + startBlock.GetGridPos();
+			try
+			{
+				grid[exploredBlock].SetTopColor(Color.green);
+			}
+			catch
+			{
+				Debug.LogWarning("Explored block is not in dictionary " + exploredBlock); 
+			}
+		};
 	}
 
 	private void ColorStartAndEnd()
@@ -33,7 +58,7 @@ public class Pathfinder : MonoBehaviour {
 			}
 			else
 			{
-				waypoint.SetTopColor(Color.grey);
+				//waypoint.SetTopColor(Color.grey);
 				grid.Add(gridPos, waypoint);
 			}
 		}

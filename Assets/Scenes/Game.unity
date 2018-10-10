@@ -443,6 +443,10 @@ Prefab:
       propertyPath: path.Array.data[7]
       value: 
       objectReference: {fileID: 2009262772}
+    - target: {fileID: 1517008494972652, guid: fdccfcd2353f9224f95fdb35f215765d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdccfcd2353f9224f95fdb35f215765d, type: 2}
   m_IsPrefabAsset: 0
@@ -572,7 +576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b45bdc35c4d564f809f1c56a8f5175, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startBlock: {fileID: 1832781086}
+  startBlock: {fileID: 2129160096}
   endBlock: {fileID: 2097746103}
 --- !u!1001 &1263622905
 Prefab:
