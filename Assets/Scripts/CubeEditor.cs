@@ -24,17 +24,20 @@ public class CubeEditor : MonoBehaviour {
 
 		LabelWriting();
 	}
-
-	private void LabelWriting()
-	{
-		textMesh = GetComponentInChildren<TextMesh>();
-		textMesh.text = snapPos.x/gridSize + "," + snapPos.z/gridSize;
-	}
-
 	private void CubeSnapping()
 	{
 		snapPos.x = Mathf.RoundToInt(transform.position.x / gridSize) * gridSize;
 		snapPos.z = Mathf.RoundToInt(transform.position.z / gridSize) * gridSize;
 		transform.position = new Vector3(snapPos.x, 0f, snapPos.z);
 	}
+
+	private void LabelWriting()
+	{
+		textMesh = GetComponentInChildren<TextMesh>();
+		string labelText = snapPos.x / gridSize + "," + snapPos.z / gridSize;
+		textMesh.text = labelText;
+		gameObject.name = "Cube " + labelText;
+	}
+
+
 }
