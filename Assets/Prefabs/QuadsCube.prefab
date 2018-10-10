@@ -54,7 +54,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4895475288549090}
-  - component: {fileID: 114773378198379702}
+  - component: {fileID: 114449652245843956}
   m_Layer: 0
   m_Name: QuadsCube
   m_TagString: Untagged
@@ -252,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 1559812875473882}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 4789150964553922}
   - {fileID: 4458812972729256}
@@ -641,7 +641,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1017470983684736}
-  m_Text: xx,xx
+  m_Text: 0,0
   m_OffsetZ: 0
   m_CharacterSize: 0.01
   m_LineSpacing: 1
@@ -655,7 +655,7 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4293263168
---- !u!114 &114773378198379702
+--- !u!114 &114449652245843956
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
