@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [ExecuteInEditMode]
-public class EditorSnap : MonoBehaviour {
+public class CubeEditor : MonoBehaviour {
 
 	[Range(1f, 20f)][SerializeField] float gridSize = 10f;
 
