@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockScript : MonoBehaviour {
+public class Waypoint : MonoBehaviour {
+
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		
 	}
 	
