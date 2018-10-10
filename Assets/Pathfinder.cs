@@ -6,10 +6,19 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour {
 
 	Dictionary<Vector2, Waypoint> grid = new Dictionary<Vector2, Waypoint>();
+	[SerializeField] Waypoint startBlock;
+	[SerializeField] Waypoint endBlock;
 
 	// Use this for initialization
-	void Start () {
+	void Start() {
 		LoadBlocks();
+		ColorStartAndEnd();
+	}
+
+	private void ColorStartAndEnd()
+	{
+		startBlock.SetTopColor(Color.magenta);
+		endBlock.SetTopColor(Color.black);
 	}
 
 	private void LoadBlocks()
@@ -24,11 +33,10 @@ public class Pathfinder : MonoBehaviour {
 			}
 			else
 			{
+				waypoint.SetTopColor(Color.grey);
 				grid.Add(gridPos, waypoint);
 			}
 		}
-
-		print(grid.Count);
 	}
 
 	// Update is called once per frame
