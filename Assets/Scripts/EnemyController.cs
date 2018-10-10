@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 
 	[SerializeField] List<Waypoint> path;
 
+
 	// Use this for initialization
 	void Start()
 	{
