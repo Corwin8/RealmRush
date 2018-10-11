@@ -6,8 +6,14 @@ using UnityEngine;
 public class Pathfinder : MonoBehaviour {
 
 	Dictionary<Vector2, Waypoint> grid = new Dictionary<Vector2, Waypoint>();
-	[SerializeField] Waypoint startBlock;
-	[SerializeField] Waypoint endBlock;
+	Queue<Waypoint> queue = new Queue<Waypoint>();
+
+	[SerializeField] Waypoint startWaypoint;
+	[SerializeField] Waypoint endWaypoint;
+
+	bool isSearching = true;
+
+	Waypoint searchCenter;
 
 	Vector2Int[] directions =
 		{
@@ -21,14 +27,31 @@ public class Pathfinder : MonoBehaviour {
 	void Start() {
 		LoadBlocks();
 		ColorStartAndEnd();
-		ExploreNeighbourgs();
+		FindPath();
+		//ExploreNeighbourgs();
+	}
+
+	private void FindPath()
+	{
+		queue.Enqueue(startWaypoint);
+
+		while(queue.Count > 0 && isSearching)
+		{
+			searchCenter = queue.Dequeue();
+			print("Searching from: " + searchCenter);
+		}
+		if (searchCenter == endWaypoint)
+		{
+			print("You have arrived at End Point on: " + searchCenter);
+			isSearching = false;
+		}
 	}
 
 	private void ExploreNeighbourgs()
 	{
 		foreach (Vector2Int direction in directions)
 		{
-			Vector2Int exploredBlock = direction + startBlock.GetGridPos();
+			Vector2Int exploredBlock = direction + startWaypoint.GetGridPos();
 			try
 			{
 				grid[exploredBlock].SetTopColor(Color.green);
@@ -42,8 +65,8 @@ public class Pathfinder : MonoBehaviour {
 
 	private void ColorStartAndEnd()
 	{
-		startBlock.SetTopColor(Color.magenta);
-		endBlock.SetTopColor(Color.black);
+		startWaypoint.SetTopColor(Color.magenta);
+		endWaypoint.SetTopColor(Color.black);
 	}
 
 	private void LoadBlocks()
