@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-	[SerializeField] List<Waypoint> path;
-
-
 	// Use this for initialization
 	void Start()
 	{
-		StartCoroutine(FollowPath());
+		Pathfinder pathfinder = FindObjectOfType<Pathfinder>();
+		var path = pathfinder.GetPath();
+		StartCoroutine(FollowPath(path));
 	}
 	
 	// Update is called once per frame
@@ -19,13 +18,11 @@ public class EnemyController : MonoBehaviour {
 
 	}
 
-	IEnumerator FollowPath()
+	IEnumerator FollowPath(List<Waypoint> path)
 	{
-		print("Starting patrol.");
 		foreach (Waypoint waypoint in path)
 		{
 			transform.position = waypoint.transform.position;
-			print("I`m currently patroling on coordinates " + waypoint.name);
 			yield return new WaitForSeconds(1f);
 		}
 		print("I arrived at the patroling destination.");

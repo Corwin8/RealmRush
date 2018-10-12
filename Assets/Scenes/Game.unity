@@ -490,7 +490,7 @@ Prefab:
       objectReference: {fileID: 2009262772}
     - target: {fileID: 1517008494972652, guid: fdccfcd2353f9224f95fdb35f215765d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdccfcd2353f9224f95fdb35f215765d, type: 2}
@@ -623,6 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startWaypoint: {fileID: 1832781086}
   endWaypoint: {fileID: 2097746103}
+  path: []
 --- !u!1001 &1263622905
 Prefab:
   m_ObjectHideFlags: 0

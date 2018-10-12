@@ -25,14 +25,32 @@ public class Pathfinder : MonoBehaviour {
 		};
 
 	// Use this for initialization
-	void Start() {
-		LoadBlocks();
-		ColorStartAndEnd();
-		FindPath();
-		//ExploreNeighbourgs();
+
+	private void CreatePath()
+	{
+		Waypoint previous = endWaypoint.exploredFrom;
+
+		path.Add(endWaypoint);
+		while (previous != startWaypoint)
+		{
+			path.Add(previous);
+			previous = previous.exploredFrom;
+		}
+		path.Add(startWaypoint);
+		path.Reverse();
 	}
 
-	private void FindPath()
+	public List<Waypoint> GetPath()
+	{
+		LoadBlocks();
+		ColorStartAndEnd();
+		BreadthFirstSearch();
+		CreatePath();
+		return path;
+	}
+
+
+	private void BreadthFirstSearch()
 	{
 		queue.Enqueue(startWaypoint);
 
