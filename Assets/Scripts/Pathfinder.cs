@@ -10,6 +10,7 @@ public class Pathfinder : MonoBehaviour {
 
 	[SerializeField] Waypoint startWaypoint;
 	[SerializeField] Waypoint endWaypoint;
+	public List<Waypoint> path;
 
 	bool isSearching = true;
 
