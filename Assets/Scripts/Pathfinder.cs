@@ -41,7 +41,7 @@ public class Pathfinder : MonoBehaviour {
 			searchCenter.isExplored = true;
 			print("Searching from: " + searchCenter);
 			HaltIfEndFound();
-			ExploreNeighbourgs(searchCenter);
+			ExploreNeighbourgs();
 		}
 	}
 
@@ -54,13 +54,13 @@ public class Pathfinder : MonoBehaviour {
 		}
 	}
 
-	private void ExploreNeighbourgs(Waypoint from)
+	private void ExploreNeighbourgs()
 	{
 		if (!isSearching) { return; }
 
 		foreach (Vector2Int direction in directions)
 		{
-			Vector2Int exploredBlock = direction + from.GetGridPos();
+			Vector2Int exploredBlock = direction + searchCenter.GetGridPos();
 			try
 			{
 				QueueNewNeighbours(exploredBlock);
@@ -81,8 +81,8 @@ public class Pathfinder : MonoBehaviour {
 		}
 		else
 		{
-			neighbour.SetTopColor(Color.green);
 			queue.Enqueue(neighbour);
+			neighbour.exploredFrom = searchCenter;
 			print("Queueing " + neighbour);
 		}
 	}
