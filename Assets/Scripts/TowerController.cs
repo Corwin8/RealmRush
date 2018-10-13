@@ -21,7 +21,14 @@ public class TowerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		FireAtEnemy();
+		if (enemyToLookAt)
+		{
+			FireAtEnemy();
+		}
+		else
+		{
+			Shoot(false);
+		}
 	}
 
 	private void FireAtEnemy()
