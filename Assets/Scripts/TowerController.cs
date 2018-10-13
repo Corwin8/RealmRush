@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour {
+public class TowerController : MonoBehaviour {
 
+	[SerializeField] public int towerDamage = 5;
 	[SerializeField] Transform gunToRotate;
 	[SerializeField] Transform enemyToLookAt;
 
@@ -22,5 +23,10 @@ public class Tower : MonoBehaviour {
 	private void LookAtEnemy()
 	{
 		gunToRotate.LookAt(enemyToLookAt);
+	}
+
+	public int GetTowerDamage(int damage)
+	{
+		return towerDamage;
 	}
 }
