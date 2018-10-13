@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4494107590357192}
   - component: {fileID: 33417111224613510}
   - component: {fileID: 23347958294020814}
+  - component: {fileID: 136717466443817690}
   m_Layer: 0
   m_Name: Body
   m_TagString: Untagged
@@ -52,7 +53,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4701086652636810}
   - component: {fileID: 114770297099428700}
-  - component: {fileID: 136801757697589664}
+  - component: {fileID: 114799886734195132}
+  - component: {fileID: 54080756911557526}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -143,6 +145,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1339177763190948}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54080756911557526
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1517008494972652}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &114770297099428700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,21 +171,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 023d40e62fcd984478bee4afa82efe3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
-  currentHP: 0
-  hitEffect: {fileID: 1895796535667506, guid: 108d8d67c811cb84f9a93d0c60c4b86e, type: 2}
-  deathEffect: {fileID: 1895796535667506, guid: e3ba73e5f577a554f9273ff0f97627d8,
-    type: 2}
---- !u!136 &136801757697589664
-CapsuleCollider:
+--- !u!114 &114799886734195132
+MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1517008494972652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7757abf0aae7f6c4098b1019c9dbe8e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHP: 0
+  maxHP: 100
+  hitCollider: {fileID: 136717466443817690}
+  hitEffect: {fileID: 1895796535667506, guid: 108d8d67c811cb84f9a93d0c60c4b86e, type: 2}
+  deathEffect: {fileID: 1895796535667506, guid: e3ba73e5f577a554f9273ff0f97627d8,
+    type: 2}
+--- !u!136 &136717466443817690
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339177763190948}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 2.5
-  m_Height: 10
+  m_Radius: 0.5
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 5.11, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
