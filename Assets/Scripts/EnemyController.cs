@@ -24,7 +24,7 @@ public class EnemyController : MonoBehaviour {
 		foreach (Waypoint waypoint in path)
 		{
 			transform.position = waypoint.transform.position;
-			yield return new WaitForSeconds(0.1f);
+			yield return new WaitForSeconds(0.5f);
 		}
 		KillEnemy();
 	}
