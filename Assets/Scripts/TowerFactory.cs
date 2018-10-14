@@ -9,10 +9,12 @@ public class TowerFactory : MonoBehaviour {
 	[SerializeField] TowerController placeableTower;
 
 
+	Queue<TowerController> towersInScene = new Queue<TowerController>();
+
+
 	public void AddTower(Waypoint baseWaypoint)
 	{
-		var towersInScene = FindObjectsOfType<TowerController>();
-		if (towersInScene.Length < towerLimit)
+		if (towersInScene.Count < towerLimit)
 		{
 			InstantiateTower(baseWaypoint);
 		}
@@ -23,16 +25,18 @@ public class TowerFactory : MonoBehaviour {
 
 	}
 
-
-
 	private void InstantiateTower(Waypoint baseWaypoint)
 	{
-		Instantiate(placeableTower, baseWaypoint.transform.position, Quaternion.identity);
+		var tower = Instantiate(placeableTower, baseWaypoint.transform.position, Quaternion.identity);
+		towersInScene.Enqueue(tower);
+		print("Towers in queue: " + towersInScene.Count);
 		baseWaypoint.isPlaceable = false;
 	}
 
 	private void MoveExistingTower()
 	{
-		throw new NotImplementedException();
+		var oldTower = towersInScene.Dequeue();
+
+		towersInScene.Enqueue(oldTower);
 	}
 }

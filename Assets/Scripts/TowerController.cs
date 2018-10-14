@@ -11,6 +11,8 @@ public class TowerController : MonoBehaviour {
 	[SerializeField] ParticleSystem projectileParticle;
 	[SerializeField] float attackRange = 30f;
 
+	public Waypoint baseWaypoint;
+
 	//state
 	Transform enemyToLookAt;
 
