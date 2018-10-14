@@ -253,7 +253,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1559812875473882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 4789150964553922}
@@ -655,7 +655,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1017470983684736}
-  m_Text: 1,0
+  m_Text: 0,0
   m_OffsetZ: 0
   m_CharacterSize: 0.01
   m_LineSpacing: 1
@@ -694,3 +694,6 @@ MonoBehaviour:
   isExplored: 0
   exploredFrom: {fileID: 0}
   exploredColor: {r: 1, g: 0, b: 1, a: 1}
+  placeableTower: {fileID: 114370996692876362, guid: 0ddc992699ca687419de46276efe1e4a,
+    type: 2}
+  isPlaceable: 1
