@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 4895475288549090}
   - component: {fileID: 114449652245843956}
   - component: {fileID: 114844104808257994}
+  - component: {fileID: 65206143289820634}
   m_Layer: 0
   m_Name: QuadsCube
   m_TagString: Untagged
@@ -252,7 +253,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1559812875473882}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 9, y: 9, z: 9}
   m_Children:
   - {fileID: 4789150964553922}
@@ -559,7 +560,7 @@ MeshCollider:
   m_GameObject: {fileID: 1929196964843742}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -573,7 +574,7 @@ MeshCollider:
   m_GameObject: {fileID: 1631437753507058}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -587,7 +588,7 @@ MeshCollider:
   m_GameObject: {fileID: 1959926478431256}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -601,7 +602,7 @@ MeshCollider:
   m_GameObject: {fileID: 1982760174271544}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -615,7 +616,7 @@ MeshCollider:
   m_GameObject: {fileID: 1481722659172872}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
@@ -629,12 +630,24 @@ MeshCollider:
   m_GameObject: {fileID: 1997276365938450}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65206143289820634
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1559812875473882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!102 &102363575333122684
 TextMesh:
   serializedVersion: 3
@@ -642,7 +655,7 @@ TextMesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1017470983684736}
-  m_Text: 0,0
+  m_Text: 1,0
   m_OffsetZ: 0
   m_CharacterSize: 0.01
   m_LineSpacing: 1
@@ -667,7 +680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c46ea9ca9b9db64fb83b2f9861ffa62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 10
 --- !u!114 &114844104808257994
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -679,3 +691,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5b38cbee2ba374fa99bd9950865c19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isExplored: 0
+  exploredFrom: {fileID: 0}
+  exploredColor: {r: 1, g: 0, b: 1, a: 1}
