@@ -19,7 +19,6 @@ public class EnemyDamage : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		tower = FindObjectOfType<TowerController>();
 		currentHP = maxHP;
 	}
 	
@@ -30,6 +29,7 @@ public class EnemyDamage : MonoBehaviour {
 
 	public void DecreaseHP()
 	{
+		tower = FindObjectOfType<TowerController>();
 		currentHP = currentHP - tower.towerDamage;
 		if (currentHP <= 0)
 		{

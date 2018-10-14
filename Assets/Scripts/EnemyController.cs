@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
+
 	// Use this for initialization
 	void Start()
 	{
@@ -23,8 +24,12 @@ public class EnemyController : MonoBehaviour {
 		foreach (Waypoint waypoint in path)
 		{
 			transform.position = waypoint.transform.position;
-			yield return new WaitForSeconds(1f);
+			yield return new WaitForSeconds(0.1f);
 		}
-		print("I arrived at the patroling destination.");
+		KillEnemy();
+	}
+	private void KillEnemy()
+	{
+		Destroy(gameObject);
 	}
 }
