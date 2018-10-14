@@ -8,6 +8,8 @@ public class Waypoint : MonoBehaviour {
 	public Waypoint exploredFrom;
 	[SerializeField] Color exploredColor = Color.magenta;
 
+	public bool isPlaceable = true;
+
 	Vector2Int gridPos;
 	const int gridSize = 10;
 
@@ -53,7 +55,10 @@ public class Waypoint : MonoBehaviour {
 
 	private void OnMouseOver()
 	{
-		print(gameObject.name);
+		if (Input.GetMouseButtonDown(0) && isPlaceable)
+		{
+			print(gameObject.name);
+		}
 	}
 
 }
