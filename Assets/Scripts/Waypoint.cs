@@ -7,7 +7,6 @@ public class Waypoint : MonoBehaviour {
 	public bool isExplored = false;
 	public Waypoint exploredFrom;
 	[SerializeField] Color exploredColor = Color.magenta;
-	[SerializeField] TowerController placeableTower;
 
 	public bool isPlaceable = true;
 
@@ -58,8 +57,7 @@ public class Waypoint : MonoBehaviour {
 	{
 		if (Input.GetMouseButtonDown(0) && isPlaceable)
 		{
-			Instantiate(placeableTower, transform.position, Quaternion.identity);
-			isPlaceable = false;
+			FindObjectOfType<TowerFactory>().AddTower(this);
 		}
 	}
 
